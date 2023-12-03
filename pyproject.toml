@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "vg-mlops23"
+version = "0.1.0"
+description = ""
+authors = ["Vigolod <109913264+Vigolod@users.noreply.github.com>"]
+license = "GNU-3.0-or-later"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "^2.1.1"
+torchvision = "^0.16.1"
+matplotlib = "^3.8.2"
+numpy = "^1.26.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

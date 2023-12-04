@@ -17,6 +17,7 @@ numpy = "^1.26.2"
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.5.0"
 dvc = "^3.31.2"
+dvc-gdrive = "^2.20.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,0 +1,4 @@
+defaults:
+  - model: model_conf
+  - train: train_conf
+save_path: "checkpoints/model.safetensors"

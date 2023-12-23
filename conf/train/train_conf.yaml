@@ -1,0 +1,9 @@
+learning_rate: 0.0003
+batch_size: 32
+num_epochs: 2
+weight_decay: 0.0
+data_path: "./data"
+train_folder: "train_11k"
+val_folder: "val"
+save_path: "mymodel_ckpt.pt"
+full_train: on

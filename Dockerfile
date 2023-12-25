@@ -17,3 +17,5 @@ COPY conf ${CONF_PATH}/
 COPY model.py train.py infer.py pyproject.toml ${PROJECT_PATH}/
 WORKDIR $PROJECT_PATH
 RUN poetry install
+
+CMD ["poetry", "run", "mlflow", "server", "--host", "127.0.0.1", "--port", "8080"]

@@ -1,14 +1,13 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+from .params.train_params import TrainParams
 
 
 @dataclass
 class TrainConf:
-    learning_rate: float = 3e-4
-    batch_size: int = 32
-    num_epochs: int = 20
-    weight_decay: float = 0.0
+    params: TrainParams = field(default_factory=TrainParams)
     data_path: str = "./data"
     train_folder: str = "train_11k"
     val_folder: str = "val"
-    save_path: str = "mymodel_ckpt.pt"
+    logging_steps: int = 10
     full_train: bool = True

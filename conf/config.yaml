@@ -1,6 +1,7 @@
 defaults:
   - model: model_conf
   - train: train_conf
+  - mlflow: mlflow_conf
   - _self_
 model_save_path: "checkpoints/model.safetensors"
 infer_data_path: "data/test_labeled"

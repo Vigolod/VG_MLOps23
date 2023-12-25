@@ -6,6 +6,8 @@ import torch
 import torchvision
 from conf.config import Config
 from conf.train.train_conf import TrainConf
+from dvc.repo import Repo
+from mlflow.utils.git_utils import get_git_commit
 from model import MyModel, get_model
 from omegaconf import OmegaConf
 from safetensors.torch import save_model
@@ -122,8 +124,15 @@ class Trainer:
             self.validation_epoch(epoch)
 
 
+def download_data():
+    repo = Repo(".")
+    repo.pull()
+
+
 @hydra.main(config_path="conf", config_name="config", version_base=None)
 def main(cfg: Config):
+    download_data()
+
     mlflow.set_tracking_uri(uri=cfg.mlflow.tracking_uri)
     mlflow.set_experiment(cfg.mlflow.exp_name)
 
@@ -132,6 +141,8 @@ def main(cfg: Config):
     trainer.setup()
 
     with mlflow.start_run():
+        commit_id = get_git_commit(Path.cwd())
+        mlflow.set_tag("Git commit", commit_id)
         params = OmegaConf.to_container(cfg.model)
         params.update(OmegaConf.to_container(cfg.train.params))
         mlflow.log_params(params)

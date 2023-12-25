@@ -3,7 +3,7 @@ defaults:
   - train: train_conf
   - mlflow: mlflow_conf
   - _self_
-model_save_path: "checkpoints/model.safetensors"
+model_save_path: "model.safetensors"
 infer_data_path: "data/test_labeled"
 infer_batch_size: 32
-predict_save_path: "predictions/predictions.csv"
+predict_save_path: "predictions.csv"

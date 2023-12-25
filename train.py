@@ -99,7 +99,7 @@ def main(cfg: Config):
     trainer = Trainer(model, cfg.train)
     trainer.setup()
     trainer.train()
-    save_model(model, cfg.save_path)
+    save_model(model, cfg.model_save_path)
 
 
 if __name__ == "__main__":

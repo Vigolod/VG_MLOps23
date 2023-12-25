@@ -8,4 +8,7 @@ from .train.train_conf import TrainConf
 class Config:
     model: ModelConf = field(default_factory=ModelConf)
     train: TrainConf = field(default_factory=TrainConf)
-    save_path: str = "checkpoints/mymodel.safetensors"
+    model_save_path: str = "checkpoints/mymodel.safetensors"
+    infer_data_path: str = "data/test_labeled"
+    infer_batch_size: int = 32
+    predict_save_path: str = "predictions/predictions.csv"

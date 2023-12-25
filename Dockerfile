@@ -14,6 +14,6 @@ ENV CONF_PATH="${PROJECT_PATH}/conf" \
 
 RUN mkdir -p ${CONF_PATH} && mkdir -p ${DATA_PATH}
 COPY conf ${CONF_PATH}/
-COPY model.py train.py pyproject.toml ${PROJECT_PATH}/
+COPY model.py train.py infer.py pyproject.toml ${PROJECT_PATH}/
 WORKDIR $PROJECT_PATH
 RUN poetry install

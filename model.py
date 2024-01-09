@@ -1,4 +1,4 @@
-from conf.model.model_conf import ModelConf
+from conf.config import ModelConf
 from torch import nn
 
 

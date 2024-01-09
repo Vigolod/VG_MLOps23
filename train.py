@@ -4,8 +4,7 @@ import hydra
 import mlflow
 import torch
 import torchvision
-from conf.config import Config
-from conf.train.train_conf import TrainConf
+from conf.config import Config, TrainConf
 from dvc.repo import Repo
 from mlflow.utils.git_utils import get_git_commit
 from model import MyModel, get_model
